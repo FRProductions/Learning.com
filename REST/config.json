@@ -1,0 +1,13 @@
+{
+    "SECRET_KEY": "&(w&k+lr49w^$a43ujtw$1g5*-0(qb+)x9j64kv26x%qvf&dj%",
+    "DATABASES": {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": "<base_dir>/db.sqlite3"
+        }
+    },
+    "EMAIL_HOST": "smtp.gmail.com",
+    "EMAIL_PORT": 587,
+    "EMAIL_HOST_USER": "something@mysite.com",
+    "EMAIL_HOST_PASSWORD": "password"
+}
