@@ -34,6 +34,8 @@ Make sure Django directory has proper ownership / permissions:
 
 Add uwsgi vassal symlink in /etc/uwsgi/vassals/
 
+    ln -s /var/git/learningdotcom/learningdotcom-REST-uwsgi.ini learningdotcom-REST-uwsgi.ini
+
 IMPORTANT: make sure upstream name (i.e. "django_learningdotcom") matches the "uwsgi_pass" setting
 
 Useful commands
@@ -41,13 +43,13 @@ Useful commands
 
     nginx
       ps -Al | grep nginx         # view running nginx processes
-      sudo service nginx stop     # WARNING: have Fraboom SSL password handy for quickly restarting the server!
+      sudo service nginx restart  # WARNING: have Fraboom SSL password handy for quickly restarting the server!
                                   # NOTE: this password is called "fraboom ssl private key" in Dashlane
-      sudo service nginx start
       sudo fuser -k 80/tcp        # kill stubborn nginx!
 
       view log file:
-          sudo tail /var/log/nginx/error.log
+          sudo tail -f /var/log/nginx/error.log
+          sudo tail -f /var/log/nginx/learningdotcom.fraboom.com.error.log
 
     UWSGI
       ps -Al | grep uwsgi         # view running uwsgi processes
