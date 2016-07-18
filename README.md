@@ -13,17 +13,17 @@ djangorestframework (3.3.3)
 Markdown (2.6.6)
 uWSGI (2.0.13)
 
-Setup new DNS entry on GoDaddy.com to map mm.fraboom.com to server IP address
+Setup new DNS entry on GoDaddy.com to map learningdotcom.fraboom.com to server IP address [BD's note: use the load balancer's IP address]
 
-Copy and configure 3 files to deployment directory, from /var/git/mcfinn/branding-portal:
-- branding-portal-nginx.conf
-- branding-portal-uwsgi.ini
+Copy and configure 3 files to deployment directory, from /var/git/learningdotcom:
+- learningdotcom-REST-nginx.conf
+- learningdotcom-REST-uwsgi.ini
 - uwsgi_params
 
 Create nginx symlink in /etc/nginx/sites-available
-    ln -s /var/git/directors/MMREST/MMREST-nginx.conf mm.fraboom.com
+    ln -s /var/git/learningdotcom/learningdotcom-REST-nginx.conf learningdotcom.fraboom.com
 Create nginx symlink in /etc/nginx/sites-enabled
-    ln -s /etc/nginx/sites-available/mm.fraboom.com mm.fraboom.com
+    ln -s /etc/nginx/sites-available/learningdotcom.fraboom.com learningdotcom.fraboom.com
 
 Make sure Django directory has proper ownership / permissions:
 - all files have group = www-data
@@ -31,7 +31,7 @@ Make sure Django directory has proper ownership / permissions:
 
 Add uwsgi vassal symlink in /etc/uwsgi/vassals/
 
-IMPORTANT: make sure upstream name (i.e. "django_mm") matches the "uwsgi_pass" setting
+IMPORTANT: make sure upstream name (i.e. "django_learningdotcom") matches the "uwsgi_pass" setting
 
 Useful commands
 ---------------
@@ -60,8 +60,8 @@ Useful commands
 Update Database
 ---------------
 
-    # go to MMREST directory
-    /var/git/directors/MMREST
+    # go to learningdotcom directory
+    /var/git/learningdotcom
 
     # get latest
     sudo git fetch
