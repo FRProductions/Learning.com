@@ -21,8 +21,11 @@ Copy and configure 3 files to deployment directory, from /var/git/learningdotcom
 - uwsgi_params
 
 Create nginx symlink in /etc/nginx/sites-available
+
     ln -s /var/git/learningdotcom/learningdotcom-REST-nginx.conf learningdotcom.fraboom.com
+
 Create nginx symlink in /etc/nginx/sites-enabled
+
     ln -s /etc/nginx/sites-available/learningdotcom.fraboom.com learningdotcom.fraboom.com
 
 Make sure Django directory has proper ownership / permissions:
