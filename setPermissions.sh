@@ -19,6 +19,9 @@ chown -R :www-data .
 chown -R :www-data REST/media
 chmod -R g+w REST/media
 
+# SQLite DB
+chmod g+w REST/db.sqlite3
+
 # restrict config file
 chmod 640 REST/config.json
 
